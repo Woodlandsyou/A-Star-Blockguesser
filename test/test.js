@@ -1,4 +1,4 @@
-const Node = require("../../Node.js");
+const Node = require("../Node.js");
 
 // const {string} = fetch("./ignore/test/data.json").then(res => res.json()).then(res => {return res}).catch(err => console.error(err));
 const {string} = require("./data.json");
