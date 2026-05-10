@@ -1,19 +1,18 @@
 const Node = require("./Node.js");
-let {streets} = require("./rawData.json");
-streets = streets[1]["1"];
-for (let i = 0; i < 3; i++) {
-    streets.shift();
-}
-const string = streets;
+const test = ["-412","-1621 -412","-1622 -411","-1623 -411","-1624 -410","-1625 -410","-1625"];
 
 function toNodeArray(data) {
-    // data = string.split(/[\s,]/);
-    let arr = [];
+    let arr = [], result = [];
     for(let i = 0; i < data.length; i++) {
         const sub = data[i].split(/[\s,]/);
         arr.push(sub[0], sub[1]);
-         
     }
-    console.log(arr);
+    arr.splice(1, 1);
+    arr.pop();
+    for (let j = 0; j < arr.length; j+=2) {
+        result.push(new Node(arr[j], arr[j + 1]));
+    }
+    return result;
 }
-toNodeArray(string);
+
+module.exports = toNodeArray;

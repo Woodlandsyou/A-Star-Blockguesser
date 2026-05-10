@@ -1,6 +1,6 @@
 class Street {
     constructor(...args) {
-        [this.id, this.name, this.color, this.coordinates] = args;
+        [this.id, this.name, this.color, this.intersections, this.coordinates] = args;
     }
 }
 
